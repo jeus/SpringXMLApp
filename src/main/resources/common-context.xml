@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+         <property name="locations">
+             <list>
+                 <value>classpath:jeus-context.properties</value>
+             </list>
+         </property>
+         <property name="searchSystemEnvironment" value="true"/>
+         <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+         <property name="ignoreUnresolvablePlaceholders" value="true"/>
+     </bean>
+     <bean id="testApi" class="com.hamavaran.server.vasat.test.TestApi">
+         <constructor-arg index="0" value="${jeus.name}"/>
+         <constructor-arg index="1" value="${jeus.lname}"/>
+         <constructor-arg index="2" value="${jeus.age}"/>
+     </bean>
+</beans>
