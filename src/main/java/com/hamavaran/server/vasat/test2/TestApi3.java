@@ -3,34 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hamavaran.server.vasat.test;
+package com.hamavaran.server.vasat.test2;
+
+import com.hamavaran.server.vasat.test.TestApi;
 
 /**
  *
  * @author jeus
  */
-public class TestApi {
+public class TestApi3 {
 
     int id;
     int age;
     String name;
     String lastName;
+    TestApi ta = new TestApi();
 
-    public TestApi() {
-        this.id = 0;
-        this.age = 10;
-        this.name = "default";
-        this.lastName = "Default";
+    public TestApi3(String name, String lastName, int age, int id, TestApi testApi) {
+        this.id = id;
+        this.age = age;
+        this.name = name;
+        this.lastName = lastName;
+        this.ta = testApi;
     }
 
-    public TestApi(String name, String lastName, int age, int id) {
+    public TestApi3(String name, String lastName, int age, int id) {
         this.id = id;
         this.age = age;
         this.name = name;
         this.lastName = lastName;
     }
 
-    public TestApi(String name, String lastName, int age) {
+    public TestApi3(String name, String lastName, int age) {
         this.age = age;
         this.name = name;
         this.lastName = lastName;
